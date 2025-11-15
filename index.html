@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio — Nama Anda</title>
+  <meta name="description" content="Portfolio pribadi — Nama Anda. Project, keahlian, dan kontak." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="assets/favicon.svg" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">Nama Anda</a>
+      <nav class="nav" id="nav">
+        <a href="#about">Tentang</a>
+        <a href="#projects">Proyek</a>
+        <a href="#skills">Keahlian</a>
+        <a href="#contact">Kontak</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Buka navigasi">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Halo, saya <span class="accent">Nama Anda</span></h1>
+          <p class="lead">Saya developer web yang membuat aplikasi dan UI yang sederhana, cepat, dan responsif.</p>
+          <div class="hero-cta">
+            <a class="btn" href="#projects">Lihat Proyek</a>
+            <a class="btn outline" href="#contact">Hubungi Saya</a>
+          </div>
+        </div>
+        <div class="hero-image" aria-hidden="true">
+          <!-- Ganti gambar ini dengan gambar Anda di assets/images/ -->
+          <img src="assets/images/profile-placeholder.png" alt="Foto profil" />
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="container about">
+      <h2>Tentang Saya</h2>
+      <p>
+        Saya seorang developer yang tertarik pada pembuatan antarmuka yang bersih dan pengalaman pengguna yang baik.
+        Saya punya pengalaman dalam HTML, CSS, JavaScript, dan framework modern.
+      </p>
+    </section>
+
+    <section id="projects" class="container projects">
+      <h2>Proyek Terpilih</h2>
+      <div class="grid">
+        <article class="card">
+          <img src="assets/images/project-1.png" alt="Project 1" />
+          <div class="card-body">
+            <h3>Nama Proyek 1</h3>
+            <p>Deskripsi singkat proyek 1. Teknologi: HTML, CSS, JS.</p>
+            <p class="muted">Repo: <a href="#" target="_blank" rel="noopener">github.com/username/project-1</a></p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="assets/images/project-2.png" alt="Project 2" />
+          <div class="card-body">
+            <h3>Nama Proyek 2</h3>
+            <p>Deskripsi singkat proyek 2. Teknologi: React, Node.js.</p>
+            <p class="muted">Demo: <a href="#" target="_blank" rel="noopener">project-2.example.com</a></p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="assets/images/project-3.png" alt="Project 3" />
+          <div class="card-body">
+            <h3>Nama Proyek 3</h3>
+            <p>Deskripsi singkat proyek 3. Teknologi: Vue, Firebase.</p>
+            <p class="muted">Repo: <a href="#" target="_blank" rel="noopener">github.com/username/project-3</a></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="container skills">
+      <h2>Keahlian</h2>
+      <ul class="skills-list">
+        <li>HTML & CSS</li>
+        <li>JavaScript / TypeScript</li>
+        <li>React / Vue</li>
+        <li>Node.js / Express</li>
+        <li>Responsive Design</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h2>Kontak</h2>
+      <p>Ingin bekerja sama atau sekadar halo? Kirim email atau gunakan form di bawah.</p>
+
+      <form class="contact-form" action="mailto:email@anda.com" method="post" enctype="text/plain">
+        <label>
+          Nama
+          <input type="text" name="name" required />
+        </label>
+
+        <label>
+          Email
+          <input type="email" name="email" required />
+        </label>
+
+        <label>
+          Pesan
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn">Kirim</button>
+          <a class="btn outline" href="mailto:email@anda.com">Kirim via Email</a>
+        </div>
+      </form>
+
+      <div class="contact-meta">
+        <p>Email: <a href="mailto:email@anda.com">email@anda.com</a></p>
+        <p>GitHub: <a href="https://github.com/hirzi-dev" target="_blank" rel="noopener">hirzi-dev</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Nama Anda — Dibangun dengan ❤️</p>
+    </div>
+  </footer>
+
+  <script>
+    // Small interactive bits
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const nav = document.getElementById('nav');
+    const navToggle = document.getElementById('navToggle');
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+
+    // Close nav on link click (mobile)
+    document.querySelectorAll('.nav a').forEach(a =>
+      a.addEventListener('click', () => nav.classList.remove('open'))
+    );
+  </script>
+</body>
+</html>
