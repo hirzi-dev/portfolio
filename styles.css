@@ -120,8 +120,22 @@ body{
 .form-actions{display:flex;gap:10px;margin-top:12px}
 
 /* FOOTER */
-.footer{padding:20px 0;border-top:1px solid rgba(255,255,255,0.03);background:linear-gradient(180deg, rgba(0,0,0,0.04), transparent)}
-.footer-inner{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:0.9rem}
+.footer{
+  padding:20px 0;
+  border-top:1px solid rgba(255,255,255,0.03);
+  background:linear-gradient(180deg, rgba(0,0,0,0.04), transparent);
+  width:100%;
+}
+
+.footer-inner{
+  display:flex;
+  justify-content:center; /* center horizontal */
+  align-items:center;     /* center vertical */
+  text-align:center;      /* fallback untuk teks */
+  color:var(--muted);
+  font-size:0.9rem;
+  gap:8px;
+}
 
 /* reveal animation */
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s var(--ease), transform .6s var(--ease)}
