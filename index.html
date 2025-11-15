@@ -17,7 +17,9 @@
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
-      <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire Me</button>
+
+      <!-- Menggunakan link agar mudah dibuka di tab baru; link membuka compose Gmail (web) dengan penerima terisi -->
+      <a class="nav-cta" href="https://mail.google.com/mail/?view=cm&fs=1&to=mhirzi2019@gmail.com&su=Halo%20dari%20Website%20Portfolio&body=Halo%20Hirzi%2C%0A%0ASaya%20ingin%20mendiskusikan%20proyek%20dengan%20Anda.%20Tolong%20beri%20tahu%20ketersediaan%20Anda." target="_blank" rel="noopener noreferrer" aria-label="Buka Gmail compose ke mhirzi2019@gmail.com">Hire Me</a>
     </div>
   </header>
 
@@ -35,7 +37,17 @@
           <p class="lead">Saya membuat produk digital yang elegan dan berorientasi pengalaman pengguna — situs web, UI/UX, dan website sistem informasi fullstack.</p>
           <div class="hero-actions">
             <a class="btn primary" href="#projects">Lihat Proyek</a>
-            <a class="btn ghost" href="mailto:email@domain.com">Email Saya</a>
+
+            <!-- Tombol Email dengan icon Gmail + membuka Gmail compose (web); ada fallback mailto di form kontak -->
+            <a class="btn ghost" href="https://mail.google.com/mail/?view=cm&fs=1&to=mhirzi2019@gmail.com&su=Halo%20dari%20Website%20Portfolio&body=Halo%20Hirzi%2C%0A%0ASaya%20ingin%20mendiskusikan%20proyek%20dengan%20Anda." target="_blank" rel="noopener noreferrer" aria-label="Kirim email ke mhirzi2019@gmail.com">
+              <!-- inline SVG icon Gmail (simple envelope) -->
+              <svg class="icon icon-gmail" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M12 13.065L2 6.5V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6.5l-10 6.565z" opacity=".9"/>
+                <path fill="currentColor" d="M12 11.065L22 4H2l10 7.065z"/>
+              </svg>
+              Email Saya
+            </a>
+
           </div>
         </div>
         <div class="hero-card" aria-hidden="true">
@@ -148,7 +160,8 @@
       <div class="container">
         <h2 class="section-title">Kontak</h2>
         <div class="contact-grid">
-          <form class="contact-form reveal" action="mailto:email@domain.com" method="post" enctype="text/plain">
+          <!-- form tetap menggunakan mailto sebagai fallback (subjek + body pra-isi) -->
+          <form class="contact-form reveal" action="mailto:mhirzi2019@gmail.com?subject=Halo%20dari%20Website%20Portfolio&body=Halo%20Hirzi%2C%0A%0ASaya%20ingin%20mendiskusikan%20proyek%20dengan%20Anda." method="post" enctype="text/plain">
             <label>
               Nama
               <input type="text" name="name" required>
@@ -170,8 +183,30 @@
             <p>Atau hubungi saya melalui:</p>
             <ul class="socials">
               <li><a href="#" target="_blank" rel="noopener">GitHub</a></li>
-              <li><a href="#" target="_blank" rel="noopener">Gmail</a></li>
-              <li><a href="#" target="_blank" rel="noopener">Watshap</a></li>
+
+              <!-- Link Gmail (compose web) + icon -->
+              <li>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mhirzi2019@gmail.com&su=Halo%20dari%20Website%20Portfolio&body=Halo%20Hirzi%2C%0A%0ASaya%20ingin%20mendiskusikan%20proyek%20dengan%20Anda." target="_blank" rel="noopener noreferrer" aria-label="Kirim email ke mhirzi2019@gmail.com">
+                  <svg class="icon icon-gmail" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle; margin-right:6px;">
+                    <path fill="currentColor" d="M12 13.065L2 6.5V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6.5l-10 6.565z" opacity=".9"/>
+                    <path fill="currentColor" d="M12 11.065L22 4H2l10 7.065z"/>
+                  </svg>
+                  Gmail
+                </a>
+              </li>
+
+              <!-- WhatsApp: nomor internasional + pesan pra-isi (percent-encoded)
+                   nomor 085624669460 -> 6285624669460 -->
+              <li>
+                <a href="https://wa.me/6285624669460?text=Halo%20Hirzi%2C%20saya%20ingin%20mendiskusikan%20proyek%20dengan%20Anda.%20Apakah%20Anda%20tersedia%20untuk%20berbicara%3F" target="_blank" rel="noopener noreferrer" aria-label="Buka chat WhatsApp ke 085624669460">
+                  <!-- inline SVG WhatsApp simple mark -->
+                  <svg class="icon icon-wa" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle; margin-right:6px;">
+                    <path fill="currentColor" d="M12.04 2C6.48 2 2 6.48 2 12.04c0 1.89.5 3.66 1.45 5.22L2 22l4.98-1.31A10.02 10.02 0 0 0 12.04 22C17.6 22 22.08 17.52 22.08 11.96 22.08 6.4 17.6 2 12.04 2zm5.02 14.5c-.25.7-1.48 1.35-2.05 1.44-.53.09-1.17.13-2.05-.13-1.83-.53-3.52-2.02-4.06-2.75-.54-.72-1.08-1.05-.23-1.74.85-.7 1.52-1.47 1.72-1.99.2-.52.03-.94-.38-1.26-.39-.31-1.36-.73-2.05-.99-.67-.26-1.37-.58-1.37-1.41 0-.83.6-1.38 1.61-1.38.99 0 1.78.12 2.56.54.78.42 1.8 1.33 2.05 1.65.25.32.39.72.18 1.09-.21.37-.4.78-.6 1.16-.21.39-.01.76.44 1.12.45.36 1.31.96 2.02 1.27.71.31 1.16.27 1.59-.02.43-.29.66-.79.8-1.07.14-.28.93-1.63 1.08-1.84.15-.21.25-.4.03-.62-.22-.22-.54-.3-.99-.47-.45-.17-1.35-.48-1.94-.67-.59-.19-.8-.24-1.05-.37-.25-.13-.49-.05-.71.16-.22.21-.83.83-1.03 1.06-.2.23-.4.39-.46.5-.06.11-.1.25.06.42.16.17.72.96 1.55 1.6.83.63 1.86 1.07 2.49 1.27.63.2 1.14.17 1.56-.06.42-.23 1.54-1.13 1.76-1.39.22-.26.43-.49.27-.78z"/>
+                  </svg>
+                  WhatsApp
+                </a>
+              </li>
+
             </ul>
             <p class="muted">Lokasi • Indonesia</p>
           </aside>
@@ -187,6 +222,10 @@
     </div>
   </footer>
 
+  <script>
+    // isi tahun otomatis
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
   <script src="scripts.js"></script>
 </body>
 </html>
