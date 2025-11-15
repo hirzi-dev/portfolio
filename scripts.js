@@ -2,7 +2,7 @@
 // Small interactions: typing effect, reveal on scroll, hover tilt, smooth nav
 document.addEventListener('DOMContentLoaded', ()=> {
   // Typing effect for roles
-  const roles = ['Front-end Developer','UI/UX Enthusiast','Web Animator','Accessibility Advocate'];
+  const roles = ['Fullstack Developer','UI/UX Enthusiast','Web Animator','Accessibility Advocate'];
   let i = 0, j = 0, current = '', isDeleting = false;
   const typingEl = document.getElementById('typing');
   const speed = 80;
